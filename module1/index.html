@@ -72,9 +72,19 @@ table.cmp th{color:var(--text-soft);font-size:.76rem;text-transform:uppercase}
 .bits{display:flex;gap:.3rem;flex-wrap:wrap;justify-content:center;margin:.8rem 0}
 .bit{width:32px;height:32px;border-radius:8px;background:var(--bg-soft);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;font-weight:700;cursor:pointer;user-select:none}
 .bit.on{background:var(--accent);color:#fff}
+</style>
+
+<style>
+.deck{border:1px solid var(--card-border);border-radius:14px;overflow:hidden;background:var(--card-bg)}
+.deckbar{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;padding:.55rem .8rem;border-bottom:1px solid var(--card-border);background:var(--bg-soft);font-size:.85rem}
+.deckbar b{color:var(--accent)}
+.deckbar button{background:var(--accent);color:#fff;border:none;border-radius:999px;padding:.35rem .8rem;font-size:.8rem;cursor:pointer;margin-left:.3rem;font-family:inherit}
+.deckscroll{max-height:75vh;overflow-y:auto;padding:.7rem;background:#0d1210;display:flex;flex-direction:column;gap:.7rem;-webkit-overflow-scrolling:touch}
+.deckscroll img{width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:8px;background:#fff}
+.deck:fullscreen .deckscroll{max-height:calc(100vh - 52px)}
 </style></head><body>
 <header class="hero"><h1>⚙️ Hardware Fundamentals, Made Simple</h1><p>Everything from your Module 1 slides explained in plain language, with pictures and a quiz.</p></header>
-<nav class="tabs"><a href="#bits">Bits</a><a href="#hwsw">HW/SW</a><a href="#os">OS</a><a href="#types4">4 Types</a><a href="#micro">Microcomputers</a><a href="#prog">Program</a><a href="#hw">Components</a><a href="#interact">Interact</a><a href="#swtypes">Software</a><a href="#quiz">Quiz</a></nav><main><section id="bits"><h2>The language of computers</h2><p class="sub">Lesson 1: define a computer</p>
+<nav class="tabs"><a href="#bits">Bits</a><a href="#hwsw">HW/SW</a><a href="#os">OS</a><a href="#types4">4 Types</a><a href="#micro">Microcomputers</a><a href="#prog">Program</a><a href="#hw">Components</a><a href="#interact">Interact</a><a href="#swtypes">Software</a><a href="#quiz">Quiz</a><a href="#slides">Slides</a></nav><main><section id="bits"><h2>The language of computers</h2><p class="sub">Lesson 1: define a computer</p>
 <div class="card"><p>A computer manipulates data using sequences of numbers made only of ones and zeroes, called <b>binary bits</b>. Each bit is:</p>
 <ul><li>An on or off electrical signal</li><li>The <b>smallest piece of information</b> a computer can store</li><li>Combined with other bits in different ways so you see a photo, a game, or the letters you type on screen</li></ul>
 <p>Click the squares to turn bits on and off — this is literally all a computer is doing, just billions of times a second.</p>
@@ -119,6 +129,90 @@ table.cmp th{color:var(--text-soft);font-size:.76rem;text-transform:uppercase}
 <div class="mini"><strong>Application software</strong><em>For the end user</em><span>Installed, upgraded or removed by users. Examples: word processors, spreadsheets, graphics programs, databases, web browsers, games, email, photo editors, media players.</span></div>
 <div class="mini"><strong>Programming software</strong><em>Software that builds software</em><span>Used to develop the OS, utility and application software. Main types: machine language, assembly language, high-level language.</span></div></div></section>
 <section id="quiz"><h2>Test yourself</h2><p class="sub">20 questions covering the whole module</p><div class="card" id="quizCard"></div></section>
+
+
+<section id="slides"><h2>📑 The original slides</h2>
+<p class="sub">All 65 slides from the PowerPoint. Scroll inside the box, or use Prev / Next.</p>
+<div class="deck" id="deck"><div class="deckbar"><span id="deckcount">Slide <b>1</b> / 65</span><span><button type="button" onclick="deckGo(-1)">◀ Prev</button><button type="button" onclick="deckGo(1)">Next ▶</button><button type="button" onclick="deckFull()">⛶ Full screen</button></span></div>
+<div class="deckscroll" id="deckscroll">
+<img src="slides/s-01.jpg" width="1000" height="563" loading="lazy" alt="Slide 1 of 65">
+<img src="slides/s-02.jpg" width="1000" height="563" loading="lazy" alt="Slide 2 of 65">
+<img src="slides/s-03.jpg" width="1000" height="563" loading="lazy" alt="Slide 3 of 65">
+<img src="slides/s-04.jpg" width="1000" height="563" loading="lazy" alt="Slide 4 of 65">
+<img src="slides/s-05.jpg" width="1000" height="563" loading="lazy" alt="Slide 5 of 65">
+<img src="slides/s-06.jpg" width="1000" height="563" loading="lazy" alt="Slide 6 of 65">
+<img src="slides/s-07.jpg" width="1000" height="563" loading="lazy" alt="Slide 7 of 65">
+<img src="slides/s-08.jpg" width="1000" height="563" loading="lazy" alt="Slide 8 of 65">
+<img src="slides/s-09.jpg" width="1000" height="563" loading="lazy" alt="Slide 9 of 65">
+<img src="slides/s-10.jpg" width="1000" height="563" loading="lazy" alt="Slide 10 of 65">
+<img src="slides/s-11.jpg" width="1000" height="563" loading="lazy" alt="Slide 11 of 65">
+<img src="slides/s-12.jpg" width="1000" height="563" loading="lazy" alt="Slide 12 of 65">
+<img src="slides/s-13.jpg" width="1000" height="563" loading="lazy" alt="Slide 13 of 65">
+<img src="slides/s-14.jpg" width="1000" height="563" loading="lazy" alt="Slide 14 of 65">
+<img src="slides/s-15.jpg" width="1000" height="563" loading="lazy" alt="Slide 15 of 65">
+<img src="slides/s-16.jpg" width="1000" height="563" loading="lazy" alt="Slide 16 of 65">
+<img src="slides/s-17.jpg" width="1000" height="563" loading="lazy" alt="Slide 17 of 65">
+<img src="slides/s-18.jpg" width="1000" height="563" loading="lazy" alt="Slide 18 of 65">
+<img src="slides/s-19.jpg" width="1000" height="563" loading="lazy" alt="Slide 19 of 65">
+<img src="slides/s-20.jpg" width="1000" height="563" loading="lazy" alt="Slide 20 of 65">
+<img src="slides/s-21.jpg" width="1000" height="563" loading="lazy" alt="Slide 21 of 65">
+<img src="slides/s-22.jpg" width="1000" height="563" loading="lazy" alt="Slide 22 of 65">
+<img src="slides/s-23.jpg" width="1000" height="563" loading="lazy" alt="Slide 23 of 65">
+<img src="slides/s-24.jpg" width="1000" height="563" loading="lazy" alt="Slide 24 of 65">
+<img src="slides/s-25.jpg" width="1000" height="563" loading="lazy" alt="Slide 25 of 65">
+<img src="slides/s-26.jpg" width="1000" height="563" loading="lazy" alt="Slide 26 of 65">
+<img src="slides/s-27.jpg" width="1000" height="563" loading="lazy" alt="Slide 27 of 65">
+<img src="slides/s-28.jpg" width="1000" height="563" loading="lazy" alt="Slide 28 of 65">
+<img src="slides/s-29.jpg" width="1000" height="563" loading="lazy" alt="Slide 29 of 65">
+<img src="slides/s-30.jpg" width="1000" height="563" loading="lazy" alt="Slide 30 of 65">
+<img src="slides/s-31.jpg" width="1000" height="563" loading="lazy" alt="Slide 31 of 65">
+<img src="slides/s-32.jpg" width="1000" height="563" loading="lazy" alt="Slide 32 of 65">
+<img src="slides/s-33.jpg" width="1000" height="563" loading="lazy" alt="Slide 33 of 65">
+<img src="slides/s-34.jpg" width="1000" height="563" loading="lazy" alt="Slide 34 of 65">
+<img src="slides/s-35.jpg" width="1000" height="563" loading="lazy" alt="Slide 35 of 65">
+<img src="slides/s-36.jpg" width="1000" height="563" loading="lazy" alt="Slide 36 of 65">
+<img src="slides/s-37.jpg" width="1000" height="563" loading="lazy" alt="Slide 37 of 65">
+<img src="slides/s-38.jpg" width="1000" height="563" loading="lazy" alt="Slide 38 of 65">
+<img src="slides/s-39.jpg" width="1000" height="563" loading="lazy" alt="Slide 39 of 65">
+<img src="slides/s-40.jpg" width="1000" height="563" loading="lazy" alt="Slide 40 of 65">
+<img src="slides/s-41.jpg" width="1000" height="563" loading="lazy" alt="Slide 41 of 65">
+<img src="slides/s-42.jpg" width="1000" height="563" loading="lazy" alt="Slide 42 of 65">
+<img src="slides/s-43.jpg" width="1000" height="563" loading="lazy" alt="Slide 43 of 65">
+<img src="slides/s-44.jpg" width="1000" height="563" loading="lazy" alt="Slide 44 of 65">
+<img src="slides/s-45.jpg" width="1000" height="563" loading="lazy" alt="Slide 45 of 65">
+<img src="slides/s-46.jpg" width="1000" height="563" loading="lazy" alt="Slide 46 of 65">
+<img src="slides/s-47.jpg" width="1000" height="563" loading="lazy" alt="Slide 47 of 65">
+<img src="slides/s-48.jpg" width="1000" height="563" loading="lazy" alt="Slide 48 of 65">
+<img src="slides/s-49.jpg" width="1000" height="563" loading="lazy" alt="Slide 49 of 65">
+<img src="slides/s-50.jpg" width="1000" height="563" loading="lazy" alt="Slide 50 of 65">
+<img src="slides/s-51.jpg" width="1000" height="563" loading="lazy" alt="Slide 51 of 65">
+<img src="slides/s-52.jpg" width="1000" height="563" loading="lazy" alt="Slide 52 of 65">
+<img src="slides/s-53.jpg" width="1000" height="563" loading="lazy" alt="Slide 53 of 65">
+<img src="slides/s-54.jpg" width="1000" height="563" loading="lazy" alt="Slide 54 of 65">
+<img src="slides/s-55.jpg" width="1000" height="563" loading="lazy" alt="Slide 55 of 65">
+<img src="slides/s-56.jpg" width="1000" height="563" loading="lazy" alt="Slide 56 of 65">
+<img src="slides/s-57.jpg" width="1000" height="563" loading="lazy" alt="Slide 57 of 65">
+<img src="slides/s-58.jpg" width="1000" height="563" loading="lazy" alt="Slide 58 of 65">
+<img src="slides/s-59.jpg" width="1000" height="563" loading="lazy" alt="Slide 59 of 65">
+<img src="slides/s-60.jpg" width="1000" height="563" loading="lazy" alt="Slide 60 of 65">
+<img src="slides/s-61.jpg" width="1000" height="563" loading="lazy" alt="Slide 61 of 65">
+<img src="slides/s-62.jpg" width="1000" height="563" loading="lazy" alt="Slide 62 of 65">
+<img src="slides/s-63.jpg" width="1000" height="563" loading="lazy" alt="Slide 63 of 65">
+<img src="slides/s-64.jpg" width="1000" height="563" loading="lazy" alt="Slide 64 of 65">
+<img src="slides/s-65.jpg" width="1000" height="563" loading="lazy" alt="Slide 65 of 65">
+</div></div></section>
+<script>
+(function(){
+  var box=document.getElementById('deckscroll'), imgs=box.getElementsByTagName('img'), cur=0, total=65;
+  function setCur(i){ cur=i; document.getElementById('deckcount').innerHTML='Slide <b>'+(i+1)+'</b> / '+total; }
+  var tick=false;
+  function update(){ var top=box.scrollTop+box.offsetTop, i=0; for(;i<imgs.length-1;i++){ if(imgs[i].offsetTop+imgs[i].offsetHeight/2>top) break; } setCur(i); }
+  box.addEventListener('scroll',function(){ if(!tick){ tick=true; requestAnimationFrame(function(){ tick=false; update(); }); } });
+  update();
+  window.deckGo=function(d){ var t=Math.max(0,Math.min(total-1,cur+d)); box.scrollTo({top:imgs[t].offsetTop-box.offsetTop-8,behavior:'smooth'}); };
+  window.deckFull=function(){ var d=document.getElementById('deck'); if(document.fullscreenElement){document.exitFullscreen();} else if(d.requestFullscreen){d.requestFullscreen();} };
+})();
+</script>
 <p class="footer-note">Made from your Module 1: Hardware Fundamentals slides · AWS Academy Data Center Technician</p></main>
 <script>
 const bitsEl = document.getElementById('bits');
