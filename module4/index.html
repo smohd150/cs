@@ -65,7 +65,18 @@ svg .arrow{stroke:var(--text-soft);stroke-width:1.5;fill:none;marker-end:url(#ah
 .score{font-size:2.2rem;font-weight:700;color:var(--accent)}
 .footer-note{text-align:center;color:var(--text-soft);font-size:.78rem;margin-top:2.5rem}
 </style>
-</head>
+
+
+
+<style>
+.deck{border:1px solid var(--card-border);border-radius:14px;overflow:hidden;background:var(--card-bg)}
+.deckbar{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;padding:.55rem .8rem;border-bottom:1px solid var(--card-border);background:var(--bg-soft);font-size:.85rem}
+.deckbar b{color:var(--accent)}
+.deckbar button{background:var(--accent);color:#fff;border:none;border-radius:999px;padding:.35rem .8rem;font-size:.8rem;cursor:pointer;margin-left:.3rem;font-family:inherit}
+.deckscroll{max-height:75vh;overflow-y:auto;padding:.7rem;background:#0d1210;display:flex;flex-direction:column;gap:.7rem;-webkit-overflow-scrolling:touch}
+.deckscroll img{width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:8px;background:#fff}
+.deck:fullscreen .deckscroll{max-height:calc(100vh - 52px)}
+</style></head>
 <body>
 <header class="hero">
   <h1>🧠 Processors, Made Simple</h1>
@@ -73,7 +84,7 @@ svg .arrow{stroke:var(--text-soft);stroke-width:1.5;fill:none;marker-end:url(#ah
 </header>
 <nav class="tabs">
   <a href="#what">What is a CPU</a><a href="#inside">Inside</a><a href="#sockets">Sockets</a><a href="#access">Access</a><a href="#remove">Remove</a><a href="#install">Install</a><a href="#quiz">Quiz</a>
-</nav>
+<a href="#slides">Slides</a></nav>
 <main>
 
 <section id="what">
@@ -167,6 +178,65 @@ svg .arrow{stroke:var(--text-soft);stroke-width:1.5;fill:none;marker-end:url(#ah
   <div class="card" id="quizCard"></div>
 </section>
 
+
+
+
+<section id="slides"><h2>📑 The original slides</h2>
+<p class="sub">All 39 slides from the PowerPoint. Scroll inside the box, or use Prev / Next.</p>
+<div class="deck" id="deck"><div class="deckbar"><span id="deckcount">Slide <b>1</b> / 39</span><span><button type="button" onclick="deckGo(-1)">◀ Prev</button><button type="button" onclick="deckGo(1)">Next ▶</button><button type="button" onclick="deckFull()">⛶ Full screen</button></span></div>
+<div class="deckscroll" id="deckscroll">
+<img src="m4-slide-01.jpg" width="1000" height="563" loading="lazy" alt="Slide 1 of 39">
+<img src="m4-slide-02.jpg" width="1000" height="563" loading="lazy" alt="Slide 2 of 39">
+<img src="m4-slide-03.jpg" width="1000" height="563" loading="lazy" alt="Slide 3 of 39">
+<img src="m4-slide-04.jpg" width="1000" height="563" loading="lazy" alt="Slide 4 of 39">
+<img src="m4-slide-05.jpg" width="1000" height="563" loading="lazy" alt="Slide 5 of 39">
+<img src="m4-slide-06.jpg" width="1000" height="563" loading="lazy" alt="Slide 6 of 39">
+<img src="m4-slide-07.jpg" width="1000" height="563" loading="lazy" alt="Slide 7 of 39">
+<img src="m4-slide-08.jpg" width="1000" height="563" loading="lazy" alt="Slide 8 of 39">
+<img src="m4-slide-09.jpg" width="1000" height="563" loading="lazy" alt="Slide 9 of 39">
+<img src="m4-slide-10.jpg" width="1000" height="563" loading="lazy" alt="Slide 10 of 39">
+<img src="m4-slide-11.jpg" width="1000" height="563" loading="lazy" alt="Slide 11 of 39">
+<img src="m4-slide-12.jpg" width="1000" height="563" loading="lazy" alt="Slide 12 of 39">
+<img src="m4-slide-13.jpg" width="1000" height="563" loading="lazy" alt="Slide 13 of 39">
+<img src="m4-slide-14.jpg" width="1000" height="563" loading="lazy" alt="Slide 14 of 39">
+<img src="m4-slide-15.jpg" width="1000" height="563" loading="lazy" alt="Slide 15 of 39">
+<img src="m4-slide-16.jpg" width="1000" height="563" loading="lazy" alt="Slide 16 of 39">
+<img src="m4-slide-17.jpg" width="1000" height="563" loading="lazy" alt="Slide 17 of 39">
+<img src="m4-slide-18.jpg" width="1000" height="563" loading="lazy" alt="Slide 18 of 39">
+<img src="m4-slide-19.jpg" width="1000" height="563" loading="lazy" alt="Slide 19 of 39">
+<img src="m4-slide-20.jpg" width="1000" height="563" loading="lazy" alt="Slide 20 of 39">
+<img src="m4-slide-21.jpg" width="1000" height="563" loading="lazy" alt="Slide 21 of 39">
+<img src="m4-slide-22.jpg" width="1000" height="563" loading="lazy" alt="Slide 22 of 39">
+<img src="m4-slide-23.jpg" width="1000" height="563" loading="lazy" alt="Slide 23 of 39">
+<img src="m4-slide-24.jpg" width="1000" height="563" loading="lazy" alt="Slide 24 of 39">
+<img src="m4-slide-25.jpg" width="1000" height="563" loading="lazy" alt="Slide 25 of 39">
+<img src="m4-slide-26.jpg" width="1000" height="563" loading="lazy" alt="Slide 26 of 39">
+<img src="m4-slide-27.jpg" width="1000" height="563" loading="lazy" alt="Slide 27 of 39">
+<img src="m4-slide-28.jpg" width="1000" height="563" loading="lazy" alt="Slide 28 of 39">
+<img src="m4-slide-29.jpg" width="1000" height="563" loading="lazy" alt="Slide 29 of 39">
+<img src="m4-slide-30.jpg" width="1000" height="563" loading="lazy" alt="Slide 30 of 39">
+<img src="m4-slide-31.jpg" width="1000" height="563" loading="lazy" alt="Slide 31 of 39">
+<img src="m4-slide-32.jpg" width="1000" height="563" loading="lazy" alt="Slide 32 of 39">
+<img src="m4-slide-33.jpg" width="1000" height="563" loading="lazy" alt="Slide 33 of 39">
+<img src="m4-slide-34.jpg" width="1000" height="563" loading="lazy" alt="Slide 34 of 39">
+<img src="m4-slide-35.jpg" width="1000" height="563" loading="lazy" alt="Slide 35 of 39">
+<img src="m4-slide-36.jpg" width="1000" height="563" loading="lazy" alt="Slide 36 of 39">
+<img src="m4-slide-37.jpg" width="1000" height="563" loading="lazy" alt="Slide 37 of 39">
+<img src="m4-slide-38.jpg" width="1000" height="563" loading="lazy" alt="Slide 38 of 39">
+<img src="m4-slide-39.jpg" width="1000" height="563" loading="lazy" alt="Slide 39 of 39">
+</div></div></section>
+<script>
+(function(){
+  var box=document.getElementById('deckscroll'), imgs=box.getElementsByTagName('img'), cur=0, total=39;
+  function setCur(i){ cur=i; document.getElementById('deckcount').innerHTML='Slide <b>'+(i+1)+'</b> / '+total; }
+  var tick=false;
+  function update(){ var top=box.scrollTop+box.offsetTop, i=0; for(;i<imgs.length-1;i++){ if(imgs[i].offsetTop+imgs[i].offsetHeight/2>top) break; } setCur(i); }
+  box.addEventListener('scroll',function(){ if(!tick){ tick=true; requestAnimationFrame(function(){ tick=false; update(); }); } });
+  update();
+  window.deckGo=function(d){ var t=Math.max(0,Math.min(total-1,cur+d)); box.scrollTo({top:imgs[t].offsetTop-box.offsetTop-8,behavior:'smooth'}); };
+  window.deckFull=function(){ var d=document.getElementById('deck'); if(document.fullscreenElement){document.exitFullscreen();} else if(d.requestFullscreen){d.requestFullscreen();} };
+})();
+</script>
 <p class="footer-note">Made from your Module 4: Processors slides · AWS Academy Data Center Technician</p>
 </main>
 
