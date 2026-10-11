@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>100 Question Quiz</title><style>
+:root{--bg:#fff;--bg-soft:#f4f6f8;--text:#1a1d23;--text-soft:#55606b;--accent:#0f6e5a;--accent-soft:#e4f3ee;--card-bg:#fff;--card-border:#e3e7ea;--shadow:0 2px 10px rgba(20,30,40,.06);--good:#1b7a3d;--bad:#c0392b;--svg-box:#f4f6f8;--svg-on:#ffe8a3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171a;--bg-soft:#1c2024;--text:#eef1f3;--text-soft:#a7b0b8;--accent:#4fd8ad;--accent-soft:#1c2f2a;--card-bg:#1c2024;--card-border:#2b3136;--shadow:0 2px 14px rgba(0,0,0,.4);--svg-box:#242a2f;--svg-on:#6b5a1e}}
+:root[data-theme="dark"]{--bg:#14171a;--bg-soft:#1c2024;--text:#eef1f3;--text-soft:#a7b0b8;--accent:#4fd8ad;--accent-soft:#1c2f2a;--card-bg:#1c2024;--card-border:#2b3136;--shadow:0 2px 14px rgba(0,0,0,.4);--svg-box:#242a2f;--svg-on:#6b5a1e}
+html{scroll-padding-top:calc(60px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+header.hero{background:linear-gradient(135deg,var(--accent),#0a4f42);color:#fff;padding:2.4rem 1.2rem 2rem;text-align:center}
+header.hero h1{margin:0 0 .4rem;font-size:1.7rem}
+header.hero p{margin:0 auto;opacity:.9;font-size:.95rem;max-width:520px}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;overflow-x:auto;gap:.3rem;background:var(--bg);border-bottom:1px solid var(--card-border);padding:.5rem .6rem}
+nav.tabs a{flex:none;text-decoration:none;color:var(--text-soft);font-size:.82rem;padding:.45rem .8rem;border-radius:999px;white-space:nowrap}
+nav.tabs a:hover{background:var(--accent-soft);color:var(--accent)}
+main{max-width:780px;margin:0 auto;padding:1.2rem 1rem 3rem}
+section{margin:2.2rem 0}
+section h2{font-size:1.25rem;margin:0 0 .3rem}
+.sub{color:var(--text-soft);font-size:.9rem;margin:0 0 1rem}
+.card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;box-shadow:var(--shadow);padding:1rem 1.1rem;margin-bottom:1rem}
+.card img{max-width:100%;max-height:170px;border-radius:10px;display:block;margin:.5rem 0}
+.card ul{margin:.4rem 0 0;padding-left:1.1rem;color:var(--text-soft);font-size:.9rem}
+.sock-head{display:flex;align-items:center;gap:.6rem}
+.sock-head h3{margin:0;font-size:1rem}
+.badge{background:var(--accent);color:#fff;font-weight:700;border-radius:8px;padding:.15rem .55rem;font-size:.85rem}
+.mini-grid{display:grid;gap:.6rem;margin-top:.8rem}
+.mini{background:var(--bg-soft);border-radius:10px;padding:.65rem .8rem}
+.mini strong{display:block;font-size:.92rem}
+.mini em{display:block;font-size:.78rem;color:var(--accent);font-style:normal;font-weight:600;margin-bottom:.2rem}
+.mini span{font-size:.86rem;color:var(--text-soft)}
+svg.arch{width:100%;height:auto;display:block}
+svg .blk{fill:var(--svg-box);stroke:var(--accent);stroke-width:1.5;cursor:pointer;transition:fill .15s}
+svg .blk.on{fill:var(--svg-on)}
+svg text{fill:var(--text);font-size:13px;pointer-events:none;font-family:inherit}
+svg .lbl{fill:var(--text-soft);font-size:11px}
+svg .arrow{stroke:var(--text-soft);stroke-width:1.5;fill:none;marker-end:url(#ah)}
+#info{margin-top:.8rem;background:var(--accent-soft);border-radius:10px;padding:.7rem .9rem;font-size:.9rem;min-height:4.5rem}
+#info strong{display:block;color:var(--accent)}
+.speed{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;font-size:.85rem;margin-top:.6rem}
+.speed span{background:var(--bg-soft);border-radius:999px;padding:.25rem .7rem}
+.steps{display:flex;flex-direction:column;gap:.9rem}
+.step{display:flex;gap:.8rem;background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:.9rem;box-shadow:var(--shadow)}
+.step-num{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700}
+.step-content h4{margin:0 0 .25rem;font-size:.98rem}
+.step-content p{margin:0 0 .5rem;color:var(--text-soft);font-size:.88rem}
+.step-content img{max-width:100%;max-height:170px;border-radius:10px;display:block}
+.tip{background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:8px;padding:.7rem .9rem;font-size:.88rem;margin-top:1rem}
+.quiz-q{font-weight:600;margin:.4rem 0 .7rem}
+.quiz-opts{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.6rem}
+.quiz-opt{text-align:left;padding:.6rem .8rem;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-soft);cursor:pointer;font-size:.9rem;color:var(--text);font-family:inherit}
+.quiz-opt:disabled{cursor:default}
+.quiz-opt.correct{background:rgba(27,122,61,.18);border-color:var(--good)}
+.quiz-opt.incorrect{background:rgba(192,57,43,.18);border-color:var(--bad)}
+.quiz-exp{display:none;font-size:.85rem;color:var(--text-soft);background:var(--bg-soft);padding:.6rem .8rem;border-radius:10px}
+.quiz-nav{display:flex;justify-content:flex-end;margin-top:1rem}
+.quiz-nav button,.quiz-result button{background:var(--accent);color:#fff;border:none;padding:.55rem 1.1rem;border-radius:999px;font-size:.88rem;cursor:pointer}
+.quiz-nav button:disabled{opacity:.4}
+.quiz-progress{font-size:.82rem;color:var(--text-soft)}
+.quiz-result{text-align:center;padding:1.5rem 1rem}
+.score{font-size:2.2rem;font-weight:700;color:var(--accent)}
+.footer-note{text-align:center;color:var(--text-soft);font-size:.78rem;margin-top:2.5rem}
+
+table.cmp{width:100%;border-collapse:collapse;font-size:.82rem}
+table.cmp th,table.cmp td{text-align:left;padding:.5rem .55rem;border-bottom:1px solid var(--card-border);vertical-align:top}
+table.cmp th{color:var(--accent);font-size:.78rem}
+.wrap{overflow-x:auto}
+.split{display:grid;gap:.8rem}
+@media(min-width:600px){.split{grid-template-columns:1fr 1fr}}
+.grid4{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.drive-card img{width:100%;max-height:130px;object-fit:cover;border-radius:10px;margin-bottom:.5rem}
+.drive-card h3{margin:.1rem 0 .3rem;font-size:.98rem}
+.drive-card p{margin:0;font-size:.84rem;color:var(--text-soft)}
+.videowrap{position:relative;width:100%;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#000}
+.videowrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.imgrow{display:flex;gap:.5rem;flex-wrap:wrap}.imgrow img{flex:1 1 90px;max-width:31%;max-height:110px;object-fit:cover;border-radius:10px}
+
+.back{display:inline-block;margin:.8rem 1rem 0;color:var(--accent);text-decoration:none;font-size:.85rem}
+.navprog{flex:none;margin-left:auto;font-size:.78rem;color:var(--accent);font-weight:700;padding:.45rem .6rem;white-space:nowrap}
+.qcard{margin-bottom:1rem}
+.qhead{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;margin-bottom:.5rem}
+.qn{font-weight:800;color:var(--accent);font-size:.95rem}
+.chip{font-size:.7rem;background:var(--bg-soft);color:var(--text-soft);border-radius:999px;padding:.15rem .6rem}
+.quiz-opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.tfrow{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.mrow{display:flex;flex-direction:column;gap:.25rem;margin-bottom:.7rem}
+.mrow label{font-size:.9rem;font-weight:600}
+.mrow select{width:100%;padding:.55rem .6rem;border-radius:10px;border:1px solid var(--card-border);background:var(--bg-soft);color:var(--text);font-size:.86rem;font-family:inherit}
+.qcard.ok{border-color:var(--good)}.qcard.bad{border-color:var(--bad)}.qcard.skip{border-color:#d4a017}
+.verdict{margin-top:.6rem;font-size:.88rem;border-radius:10px;padding:.65rem .8rem;background:var(--bg-soft)}
+.verdict b.ok{color:var(--good)}.verdict b.bad{color:var(--bad)}.verdict b.skip{color:#d4a017}
+.verdict ul{margin:.3rem 0 0;padding-left:1.1rem}
+.mrow select.good{border-color:var(--good)}.mrow select.wrong{border-color:var(--bad)}
+.actions{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin:1.2rem 0}
+.btn{background:var(--accent);color:#fff;border:none;padding:.7rem 1.4rem;border-radius:999px;font-size:.95rem;cursor:pointer;font-family:inherit}
+.btn.ghost{background:var(--bg-soft);color:var(--text);border:1px solid var(--card-border)}
+.score{font-size:2.6rem;font-weight:800;color:var(--accent);text-align:center}
+.bars{display:grid;gap:.45rem;margin-top:.8rem}
+.barrow{display:grid;grid-template-columns:150px 1fr 48px;gap:.5rem;align-items:center;font-size:.8rem}
+.track{height:10px;background:var(--bg-soft);border-radius:999px;overflow:hidden}.track i{display:block;height:100%;background:var(--accent)}
+@media(max-width:480px){.barrow{grid-template-columns:100px 1fr 40px}}
+table.key{width:100%;border-collapse:collapse;font-size:.82rem}
+table.key th,table.key td{text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--card-border);vertical-align:top}
+table.key th{color:var(--accent);font-size:.75rem}
+.hide{display:none!important}
+</style></head><body>
+<a class="back" href="../index.html">← Course Hub</a>
+<header class="hero"><h1>💯 100 Question Quiz</h1><p>Questions from all 8 modules, shuffled every time. Multiple choice, true/false and matching.</p></header>
+<nav class="tabs"><a href="#quiz">Quiz</a><a href="#results">Results</a><a href="#keyWrap">Answer key</a><span class="navprog" id="navprog">0 / 100 answered</span></nav>
+<main>
+<section id="quiz"><h2>How it works</h2>
+<p class="sub">Answer everything, press Submit at the bottom, and you get your score, a breakdown by module, and the answer key.</p>
+<div class="card"><p style="margin:0">Every question is shown on this page in a new random order each attempt. Matching questions use drop-downs: pick the right description for each item. You can submit with questions left blank, they count as skipped.</p>
+<div class="track" style="margin-top:.8rem"><i id="pb" style="width:0%"></i></div><p class="sub" style="margin:.3rem 0 0" id="pc">0 of 100 answered</p></div>
+<div id="qlist"></div>
+<div class="actions" id="submitRow"><button class="btn" onclick="submitQuiz()">Submit and see my score</button><button class="btn ghost" onclick="revealKey()">Just show the answer key</button><button class="btn ghost" onclick="start()">Reshuffle</button></div>
+</section>
+<section id="results"></section>
+<section id="keyWrap" class="hide"><h2>📋 Answer key</h2><p class="sub">All 100 answers, in the order they appeared in your quiz</p>
+<div class="card" style="overflow-x:auto"><table class="key"><tr><th>#</th><th>Module</th><th>Type</th><th>Question and answer</th></tr><tbody id="keyBody"></tbody></table></div></section>
+<p class="footer-note">Questions drawn from all 8 AWS Academy Data Center Technician modules</p></main>
+<script>
+
+const Q = [{"m": 1, "t": "mc", "q": "What is the smallest piece of information a computer can store?", "o": ["A bit", "A byte", "A pixel", "A program"], "a": 0, "x": "A bit is a single on/off (1 or 0) electrical signal."}, {"m": 1, "t": "tf", "q": "Software is the physical circuits, chips and wires that make up a computer.", "a": false, "x": "That's hardware. Software is the set of instructions that tells the hardware what to do."}, {"m": 1, "t": "mc", "q": "A minicomputer is usually called a ___, optimized to provide services to other computers over a network.", "o": ["Server", "Workstation", "Smartwatch", "Microcontroller"], "a": 0, "x": "Minicomputers are commonly called servers."}, {"m": 1, "t": "mc", "q": "Which computer is about the size of a household refrigerator, supports hundreds or thousands of users at once, and is heavily used by banks?", "o": ["Mainframe computer", "Supercomputer", "Tablet", "Microcomputer"], "a": 0, "x": "Mainframes are built for reliable transaction processing with built-in security."}, {"m": 1, "t": "mc", "q": "A supercomputer's speed is measured in...", "o": ["Petaflops", "Pixels", "Gigabytes", "Pages"], "a": 0, "x": "One petaflop is a thousand trillion calculations per second."}, {"m": 1, "t": "tf", "q": "A mainframe focuses on a few programs as fast as possible, while a supercomputer executes many programs concurrently.", "a": false, "x": "It's the other way round: a mainframe runs many programs at once; a supercomputer focuses on a few, as fast as possible."}, {"m": 1, "t": "mc", "q": "A microcontroller, such as the computer inside a washing machine, is also known as...", "o": ["An embedded system", "A mainframe", "A server", "A workstation"], "a": 0, "x": "Microcontrollers are programmable microcomputers built for one niche task."}, {"m": 1, "t": "mc", "q": "Which is the correct order of how software and hardware interact?", "o": ["Load \u2192 Input \u2192 Process \u2192 Output", "Input \u2192 Output \u2192 Load \u2192 Process", "Process \u2192 Load \u2192 Output \u2192 Input", "Output \u2192 Process \u2192 Input \u2192 Load"], "a": 0, "x": "The program is loaded into RAM, receives input, is processed by the CPU, then produces output."}, {"m": 1, "t": "tf", "q": "Device drivers are utility software that help external devices communicate with the operating system.", "a": true, "x": "Utility software analyzes, configures and maintains a computer; drivers are one example."}, {"m": 1, "t": "mc", "q": "Which type of software is essential, because the computer can't function without it?", "o": ["Operating system", "Application software", "Utility software", "Programming software"], "a": 0, "x": "Examples: Windows, macOS, Linux."}, {"m": 1, "t": "match", "q": "Match each computer type with its description.", "p": [["Mainframe", "Executes many programs concurrently for hundreds or thousands of users"], ["Supercomputer", "Uses thousands of processors in parallel; speed measured in petaflops"], ["Minicomputer", "A server that provides services to other computers over a network"], ["Microcomputer", "A single CPU on one chip, e.g. a PC, smartphone or game console"]], "x": ""}, {"m": 1, "t": "match", "q": "Match each software type with an example.", "p": [["Operating system", "Windows, macOS or Linux"], ["Utility software", "Antivirus, backup or file compression"], ["Application software", "Word processor, web browser or game"], ["Programming software", "Machine, assembly or high-level languages"]], "x": ""}, {"m": 2, "t": "mc", "q": "Which tool grounds you so static electricity can't damage components?", "o": ["Antistatic wrist strap", "Multimeter", "Wire cutter", "Flashlight"], "a": 0, "x": "The strap's conductor threads carry charge safely to ground through a metal clip."}, {"m": 2, "t": "tf", "q": "It's safe to touch internal components while the power cord is still plugged in, as long as you're careful.", "a": false, "x": "Never touch internals with power connected: it risks electrocution and broken parts."}, {"m": 2, "t": "mc", "q": "What should you do with the screws you remove during hardware work?", "o": ["Sort them by size and store them carefully", "Throw them away", "Leave them loose inside the case", "Keep only the biggest ones"], "a": 0, "x": "Sorting prevents mismatches when you reassemble."}, {"m": 2, "t": "mc", "q": "Where should you temporarily store removed components?", "o": ["In an antistatic bag", "On the carpet", "In a plastic cup", "Next to the monitor"], "a": 0, "x": "Avoid touching gold leads or circuits."}, {"m": 2, "t": "tf", "q": "If a component won't seat easily, you should push harder to force it in.", "a": false, "x": "Resistance usually means a mismatch. Stop and check."}, {"m": 2, "t": "mc", "q": "After installing a power supply, something smells of burning or smoke. What do you do?", "o": ["Disconnect the power immediately", "Keep working", "Add thermal paste", "Turn the fan up"], "a": 0, "x": "Abnormal heat, burning smell or smoke means disconnect power right away."}, {"m": 2, "t": "mc", "q": "What are the three categories in a technician's toolkit?", "o": ["Safety, technical and cleaning tools", "Input, output and storage tools", "Hardware, software and firmware tools", "CPU, RAM and motherboard tools"], "a": 0, "x": "Together they keep the technician safe and efficient."}, {"m": 2, "t": "mc", "q": "Why use a lint-free cloth for cleaning electronics?", "o": ["It doesn't shed fibers or build up static charge", "It's magnetic", "It's waterproof", "It conducts electricity"], "a": 0, "x": "It also won't scratch or smudge."}, {"m": 2, "t": "mc", "q": "Compressed air is mainly used to...", "o": ["Blow dirt and dust out of hard-to-reach areas", "Cut wires", "Measure voltage", "Bundle cables"], "a": 0, "x": "It blows straight from the canister onto the area being cleaned."}, {"m": 2, "t": "tf", "q": "A multimeter can measure voltage, current and resistance.", "a": true, "x": "It's also called a circuit analyzer."}, {"m": 2, "t": "match", "q": "Match each network/cable tool with what it does.", "p": [["Cable tester", "Detects short circuits and crossed or broken wires using an LED indicator"], ["Toner and probe kit", "Finds a specific cable in a bundle, or an unlabeled port"], ["Loopback adapter", "Tests a port by rerouting the signal back to its source"], ["Multimeter", "Measures voltage, current and resistance"]], "x": ""}, {"m": 2, "t": "match", "q": "Match each hand tool with its job.", "p": [["Wire stripper", "Removes insulation without damaging the wire inside"], ["Crimp tool", "Attaches a connector to a cable end by deforming metal"], ["Wire cutter", "Cuts wire; has an insulated handle to prevent shock"], ["Cable ties", "Bundle and organize cables to prevent tangling"]], "x": ""}, {"m": 3, "t": "mc", "q": "Another name for the motherboard is...", "o": ["Mainboard / system board", "Power board", "Heat board", "Daughter card"], "a": 0, "x": "It's the backbone that every other component connects to."}, {"m": 3, "t": "mc", "q": "On the front panel, what color is the mouse port?", "o": ["Green", "Purple", "Pink", "Lime green"], "a": 0, "x": "Purple = keyboard, green = mouse, lime green = audio, pink = microphone."}, {"m": 3, "t": "tf", "q": "The CPU socket uses LGA pins, which must be checked so they aren't bent.", "a": true, "x": "Bent pins mean the CPU won't connect properly."}, {"m": 3, "t": "mc", "q": "Which integrated circuit handles most of the input/output (I/O) devices?", "o": ["Southbridge", "Northbridge", "CMOS", "Super CPU"], "a": 0, "x": "The Southbridge is smaller than the Northbridge and talks to the CPU through it."}, {"m": 3, "t": "mc", "q": "Which type of heat sink has no moving parts and is common in servers?", "o": ["Passive heat sink", "Active heat sink", "Case fan", "Liquid pump"], "a": 0, "x": "Passive heat sinks are aluminum radiators that remove heat through convection."}, {"m": 3, "t": "mc", "q": "Which connector links the power supply to the motherboard?", "o": ["24-pin ATX connector", "SATA connector", "PCI-E slot", "Jumper"], "a": 0, "x": "The 4-pin P4 connector gives the CPU extra power."}, {"m": 3, "t": "tf", "q": "SATA is slower than the older IDE interface.", "a": false, "x": "SATA is faster, and has mostly replaced IDE."}, {"m": 3, "t": "mc", "q": "What keeps the system's date, time and hardware settings saved when the computer is off?", "o": ["The CMOS backup battery", "A jumper", "A capacitor", "The case fan"], "a": 0, "x": "CMOS is also called non-volatile BIOS memory."}, {"m": 3, "t": "mc", "q": "Which slot replaced AGP as the primary slot for graphics cards?", "o": ["PCI Express (PCI-E)", "SATA", "DIMM", "PGA"], "a": 0, "x": "AGP was made only for graphics cards and is rarely used today."}, {"m": 3, "t": "mc", "q": "What is the very first step when removing a motherboard from a server?", "o": ["Safety first: PPE and an antistatic strap", "Unscrew the board", "Remove the CPU", "Pull out the PCI-E card"], "a": 0, "x": "Safety always comes first, and ask for help because server chassis are heavy."}, {"m": 3, "t": "tf", "q": "When installing a CPU on a new motherboard, you place a pea-sized dot of thermal paste before attaching the heat sink.", "a": true, "x": "The paste helps move heat away from the CPU."}, {"m": 3, "t": "mc", "q": "After you take off the server's top cover, which component do you remove first?", "o": ["The PCI-E card", "The motherboard", "The power supply", "The CMOS battery"], "a": 0, "x": "Then memory risers, DIMMs and CPUs, fan modules, drive cables, and power cables."}, {"m": 3, "t": "match", "q": "Match each component with its purpose.", "p": [["Northbridge", "Facilitates communication between the CPU, RAM and graphics port"], ["Southbridge", "Handles most of the I/O devices"], ["Jumper", "Configures the settings for a hardware device"], ["Passive heat sink", "Aluminum radiator that removes heat through convection"], ["Active heat sink", "Cools using a fan that runs on the power supply"]], "x": ""}, {"m": 4, "t": "mc", "q": "What does the Von Neumann architecture mean?", "o": ["The program and the data are stored in the same memory", "Only data is stored in memory", "The CPU has no memory", "Programs are entered by hand"], "a": 0, "x": "Earlier computers stored only instructions, which made reprogramming hard."}, {"m": 4, "t": "mc", "q": "Which part reads instructions and generates signals that guide the other components?", "o": ["Control Unit (CU)", "ALU", "Register", "Cache"], "a": 0, "x": "The CU is the traffic director of the CPU."}, {"m": 4, "t": "tf", "q": "The ALU performs arithmetic operations and logical operations such as AND, OR and NOT.", "a": true, "x": "ALU = Arithmetic Logic Unit."}, {"m": 4, "t": "mc", "q": "Which is the fastest, most quickly accessible memory location in a computer?", "o": ["Registers", "Cache", "RAM", "Hard drive"], "a": 0, "x": "Speed order: registers, then cache, then RAM."}, {"m": 4, "t": "mc", "q": "A 64-bit microprocessor can perform operations on inputs up to...", "o": ["64 bits", "32 bits", "128 bits", "8 bits"], "a": 0, "x": "Register size defines the processor's capacity."}, {"m": 4, "t": "tf", "q": "In a PGA socket, the pins are in the socket and touch pads on the processor.", "a": false, "x": "That describes LGA. In PGA the pins are on the processor and fit into holes in the socket."}, {"m": 4, "t": "mc", "q": "Which socket type was used in the Intel 8086 and 8088 processors?", "o": ["DIP (dual inline package)", "SIP (single inline package)", "PGA", "LGA"], "a": 0, "x": "DIP allowed solder-free installation for PC makers."}, {"m": 4, "t": "mc", "q": "Why should you wear an antistatic (ESD) wrist band when working on a processor?", "o": ["Static can spoil an entire electronic circuit", "To keep your hands warm", "To hold the screws", "To measure voltage"], "a": 0, "x": "Release body static before touching internals."}, {"m": 4, "t": "tf", "q": "A ZIF (zero insertion force) socket needs firm pressure to push the processor in.", "a": false, "x": "The processor should drop in without force. Forcing it bends or breaks pins."}, {"m": 4, "t": "mc", "q": "How should you hold a processor?", "o": ["By opposite edges, without touching the top or the pins", "By its pins", "By its top surface", "Together with the heat sink"], "a": 0, "x": "Gloves are preferred."}, {"m": 4, "t": "mc", "q": "If the heat sink screws have no numbered order, how should you tighten them?", "o": ["In a cross-diagonal pattern", "Left to right", "Only one corner", "In any order"], "a": 0, "x": "That gives even pressure."}, {"m": 4, "t": "mc", "q": "What happens if you use too much thermal paste?", "o": ["It leaks over the sides and can cause a short circuit", "Cooling gets better", "The CPU runs faster", "Nothing"], "a": 0, "x": "Use a small amount only."}, {"m": 4, "t": "match", "q": "Match each processor component with its function.", "p": [["ALU", "Performs arithmetic and logical operations"], ["CU", "Reads instructions and generates signals to guide other components"], ["Register", "Stores the input values and the result"], ["Cache", "Temporary storage integrated with the CPU chip"]], "x": ""}, {"m": 5, "t": "tf", "q": "Primary storage (RAM) is volatile: it loses its data when power is off.", "a": true, "x": "Secondary storage is nonvolatile."}, {"m": 5, "t": "mc", "q": "Secondary storage is made of...", "o": ["Magnetic or optical material", "Semiconductors only", "Registers", "Capacitors only"], "a": 0, "x": "That makes it cheaper than primary storage."}, {"m": 5, "t": "mc", "q": "In the chef analogy, what does the counter represent?", "o": ["Memory", "The processor", "Permanent storage", "The power supply"], "a": 0, "x": "Chef = processor, pantry = permanent storage, counter = memory."}, {"m": 5, "t": "mc", "q": "How does DRAM keep its data?", "o": ["Its cells are recharged every few milliseconds", "It never loses it", "It uses magnets", "It uses 6 transistors per cell"], "a": 0, "x": "SRAM uses 4-6 transistors and needs no refresh."}, {"m": 5, "t": "tf", "q": "SRAM is cheaper than DRAM.", "a": false, "x": "SRAM is less common and more expensive."}, {"m": 5, "t": "mc", "q": "What is a cache hit?", "o": ["The CPU finds the data in the cache and reads it from there", "Data is copied from RAM into the cache", "The cache becomes full", "The RAM crashes"], "a": 0, "x": "If it isn't found, that's a cache miss."}, {"m": 5, "t": "mc", "q": "Which memory package was used in the 1980s-90s and is now obsolete?", "o": ["SIMM", "DIMM", "UDIMM", "RDIMM"], "a": 0, "x": "SIMMs came in 30- or 72-pin sets with typically 32-bit transfers."}, {"m": 5, "t": "mc", "q": "Which DIMM type is commonly used in servers because it's more stable?", "o": ["Registered (RDIMM)", "Unbuffered (UDIMM)", "SIMM", "None of them"], "a": 0, "x": "It also reduces strain on the CPU's memory controller."}, {"m": 5, "t": "tf", "q": "Troubleshooting faulty RAM must follow one strict order of steps.", "a": false, "x": "There's no required order. Evaluate what the computer is doing first."}, {"m": 5, "t": "mc", "q": "Which is a symptom of faulty RAM?", "o": ["Random restarts or a blue screen at startup", "A brighter display", "Faster boot times", "A cooler case"], "a": 0, "x": "Also: programs slowing after a few hours, and recently used files becoming corrupted."}, {"m": 5, "t": "mc", "q": "In which unit is memory measured?", "o": ["Bytes", "Pages", "Volts", "Watts"], "a": 0, "x": "1 byte = 8 bits."}, {"m": 5, "t": "match", "q": "Match each level of the memory hierarchy with its example.", "p": [["Level 1 (internal memory)", "Processor registers and cache/SRAM"], ["Level 2 (main memory)", "RAM, the only storage the CPU accesses directly"], ["Level 3 (online mass storage)", "Hard disk drives and solid state drives"], ["Level 4 (offline bulk storage)", "Tape cartridges, DVDs and USB flash drives"]], "x": ""}, {"m": 5, "t": "match", "q": "Match each memory module with its description.", "p": [["UDIMM", "Desktops and laptops: faster, cheaper, less stable"], ["RDIMM", "Servers: more stable, reduces strain on the memory controller"], ["FB-DIMM", "Larger systems: better error detection and signal integrity"], ["SIMM", "1980s-90s, 30- or 72-pin sets, now obsolete"]], "x": ""}, {"m": 6, "t": "mc", "q": "Why are SSDs generally faster and more durable than HDDs?", "o": ["They have no moving parts", "They use magnetic tape", "They have bigger platters", "They need more power"], "a": 0, "x": "SSDs store data in flash memory chips."}, {"m": 6, "t": "tf", "q": "Tape cartridges use sequential access, so you must run through the tape to find data.", "a": true, "x": "That's why tape is mainly used for backup and archiving."}, {"m": 6, "t": "mc", "q": "On an HDD, what are the concentric circular paths on a disk where data sits called?", "o": ["Tracks", "Pages", "Blocks", "Cells"], "a": 0, "x": "Each track is divided into smaller segments called sectors."}, {"m": 6, "t": "mc", "q": "On an SSD, what is a single row of the memory grid called?", "o": ["A page", "A track", "A sector", "A platter"], "a": 0, "x": "A grid is a block; a row of it is a page."}, {"m": 6, "t": "tf", "q": "SSDs are the best choice for long-term archival storage.", "a": false, "x": "An unpowered SSD can start losing data within 1-2 years. HDDs and tape suit archiving."}, {"m": 6, "t": "mc", "q": "What does UMS stand for in USB flash drives?", "o": ["USB mass storage (device class)", "Universal memory system", "Unified media server", "USB module service"], "a": 0, "x": "UMS lets the OS treat the drive like a normal external drive."}, {"m": 6, "t": "mc", "q": "Before inserting an HDD or SSD into a desktop, you should...", "o": ["Back up data, check for free slots, and confirm compatibility", "Remove the motherboard", "Format the OS", "Unplug the monitor"], "a": 0, "x": "These three checks come before the physical install steps."}, {"m": 6, "t": "mc", "q": "Where should you place a removed HDD or SSD?", "o": ["In an antistatic bag", "On the desk", "In your pocket", "Back in the case"], "a": 0, "x": "It protects the drive from electrostatic damage."}, {"m": 6, "t": "mc", "q": "How do you safely remove a USB flash drive on Windows?", "o": ["Right-click it in File Explorer and choose Eject", "Just pull it out", "Restart first", "Format it"], "a": 0, "x": "This prevents data corruption."}, {"m": 6, "t": "mc", "q": "What is the first step when troubleshooting an HDD?", "o": ["Ensure the HDD is receiving power", "Check for viruses", "Check the partitions", "Format the drive"], "a": 0, "x": "Then BIOS recognition, viruses, partitions, file system, disk errors."}, {"m": 6, "t": "mc", "q": "Which diagnostic data is built into SSDs to report issues?", "o": ["S.M.A.R.T.", "POST", "UMS", "BIOS"], "a": 0, "x": "Check S.M.A.R.T. data when troubleshooting an SSD."}, {"m": 6, "t": "tf", "q": "In a data center, a collection of tape drives is called a tape library.", "a": true, "x": "Tape libraries are used for backup and archiving."}, {"m": 6, "t": "match", "q": "Match each drive with its best use.", "p": [["HDD", "Digital archives and mass storage"], ["SSD", "Power computing and mobile / small-form-factor devices"], ["USB flash drive", "Moving data, firmware updates, booting or installing an OS"], ["Tape cartridge", "Backup and archiving in a tape library"]], "x": ""}, {"m": 7, "t": "mc", "q": "What does a PSU do?", "o": ["Converts high-voltage AC from the wall into low-voltage DC", "Converts DC into high-voltage AC", "Stores data", "Cools the CPU"], "a": 0, "x": "Computer circuits need low-voltage DC."}, {"m": 7, "t": "tf", "q": "A PSU is sometimes called a switched-mode power supply (SMPS).", "a": true, "x": ""}, {"m": 7, "t": "mc", "q": "Which voltage powers cooling fans, HDDs and high-powered GPUs?", "o": ["+12 V", "+3.3 V", "-5 V", "+1 V"], "a": 0, "x": "+3.3 V and +5 V power almost everything else."}, {"m": 7, "t": "mc", "q": "A PSU's power rating should be how much greater than the calculated system load?", "o": ["40 percent", "10 percent", "5 percent", "100 percent"], "a": 0, "x": "PC PSUs range from 250 W to 1000 W."}, {"m": 7, "t": "tf", "q": "The motherboard uses the PSU's 4+4-pin connector as its main source of power.", "a": false, "x": "The 20+4-pin connector powers the motherboard; the 4+4-pin powers graphics processing."}, {"m": 7, "t": "mc", "q": "What is step 1 of removing a PSU?", "o": ["Turn off the power and disconnect the power cord", "Unscrew the PSU", "Remove the panel", "Unplug the internal connectors"], "a": 0, "x": "Order: power off, remove panel, disconnect PSU, unscrew, remove."}, {"m": 7, "t": "mc", "q": "What is the last step of installing a PSU?", "o": ["Test it by turning on power and pressing the power button", "Replace the panel", "Secure it with screws", "Connect the power cord"], "a": 0, "x": "Testing confirms the PC turns on."}, {"m": 7, "t": "mc", "q": "What is the ideal voltage at the orange power-good pin?", "o": ["+3 V to +6 V", "+12 V", "-12 V", "0 V"], "a": 0, "x": "It should momentarily spike when you turn the power supply on."}, {"m": 7, "t": "tf", "q": "A variation of up to 5 percent from the required pin voltage is acceptable.", "a": true, "x": ""}, {"m": 7, "t": "mc", "q": "Which is a common symptom of a PSU problem?", "o": ["Unrequested restarts", "A brighter screen", "A faster boot", "A quieter fan"], "a": 0, "x": "Others: no power, unresponsive system, devices not detected, overheating, electrical charge on the case."}, {"m": 7, "t": "match", "q": "Match each item with what it does or powers.", "p": [["+12 V", "Cooling fans, HDDs and high-powered GPUs"], ["+3.3 V and +5 V", "CPU, RAM and motherboard circuitry"], ["20+4-pin connector", "Connects the PSU to the motherboard"], ["4+4-pin connector", "Powers graphics processing"]], "x": ""}, {"m": 7, "t": "match", "q": "Match each PSU pin wire color with its voltage.", "p": [["Red", "+5 V"], ["Yellow", "+12 V"], ["Blue", "-12 V"], ["Black", "Ground (0 V)"]], "x": ""}, {"m": 8, "t": "mc", "q": "A graphics card is also known as a...", "o": ["Graphics adapter", "Sound adapter", "Memory module", "Power board"], "a": 0, "x": "It's the interface between the computer and the monitor."}, {"m": 8, "t": "mc", "q": "Which part is the chip or circuit that renders the graphics?", "o": ["GPU", "Video memory", "Display output", "PCIe interface"], "a": 0, "x": "GPU = graphics processing unit."}, {"m": 8, "t": "tf", "q": "Rasterization fills in the remaining pixels of the image.", "a": true, "x": "After this, the GPU adds lighting, texture and color."}, {"m": 8, "t": "mc", "q": "What does the graphics card create first from the CPU's instructions?", "o": ["A wire frame made of straight lines", "A finished photo", "A sound", "A color palette"], "a": 0, "x": "Then it rasterizes the image."}, {"m": 8, "t": "tf", "q": "Onboard graphics cards are best for high-speed rendering such as gaming and video editing.", "a": false, "x": "Those jobs suit PCIe (discrete) cards. Onboard cards are cost-effective but hard to upgrade."}, {"m": 8, "t": "mc", "q": "What is the first step when removing a graphics card?", "o": ["Remove the driver from the computer", "Unscrew the card", "Pull the card out", "Open the side panel"], "a": 0, "x": "Then: power off and unplug, open the panel, unplug the power cable, unscrew, release the clip, pull out into an antistatic bag."}, {"m": 8, "t": "mc", "q": "What is the last step when installing a graphics card?", "o": ["Download the driver and follow the wizard", "Verify connections", "Secure it with screws", "Power on"], "a": 0, "x": "After powering on, the OS detects a new device."}, {"m": 8, "t": "mc", "q": "Which is a warning sign of a failing graphics card?", "o": ["Artifacts on the screen", "A faster boot", "A quiet fan", "Longer battery life"], "a": 0, "x": "Others: frozen or stuttering display, screen glitches, loud fan noise, system crash."}, {"m": 8, "t": "mc", "q": "What can regulate your power input to protect a graphics card from surges and blackouts?", "o": ["An uninterruptible power supply (UPS)", "A bigger monitor", "A lint-free cloth", "A jumper"], "a": 0, "x": "Also check the power voltage is correct for the card."}, {"m": 8, "t": "mc", "q": "What is overclocking?", "o": ["Increasing the processor clock speed above its designated speed", "Cleaning the fan", "Lowering the voltage", "Installing a driver"], "a": 0, "x": "It can stress a graphics card."}, {"m": 8, "t": "match", "q": "Match each graphics card component with its description.", "p": [["GPU", "Chip or circuit that renders the graphics"], ["Video memory", "Stores all data related to images and graphics"], ["Display output", "Connects to a monitor and exchanges information"], ["PCIe interface", "Connector that attaches the card to the motherboard"]], "x": ""}, {"m": 8, "t": "match", "q": "Match each problem with its fix.", "p": [["Loud fan noise", "Cool down the system"], ["Driver incompatible with the card", "Update the driver from the manufacturer's website"], ["Damage from a sudden power surge", "Check that the power voltage is correct for the card"], ["Inconsistent graphics data transmission", "Reduce the AGP speed in configuration settings"]], "x": ""}];
+const MODS = {"1": "Hardware Fundamentals", "2": "Hardware Tools & Safety", "3": "Motherboards", "4": "Processors", "5": "Memory", "6": "Storage Drives", "7": "Power Supplies", "8": "Graphics Cards"};
+const LET = ['A','B','C','D','E'];
+let view = [], ans = [], done = false;
+
+function shuffle(a){ for (let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function typeName(t){ return t==='mc' ? 'Multiple choice' : t==='tf' ? 'True / False' : 'Matching'; }
+
+function start(){
+  done = false;
+  view = shuffle(Q.map((_,i)=>i)).map(i => {
+    const q = Q[i];
+    if (q.t==='mc') return {i, opts: shuffle(q.o.map((_,k)=>k))};
+    if (q.t==='match') return {i, right: shuffle(q.p.map((_,k)=>k))};
+    return {i};
+  });
+  ans = view.map(v => Q[v.i].t==='match' ? Array(Q[v.i].p.length).fill(-1) : null);
+  document.getElementById('results').innerHTML = '';
+  document.getElementById('keyBody').innerHTML = '';
+  document.getElementById('keyWrap').classList.add('hide');
+  document.getElementById('submitRow').classList.remove('hide');
+  render(); updateProg();
+  window.scrollTo({top: document.getElementById('quiz').offsetTop - 60, behavior:'smooth'});
+}
+
+function render(){
+  document.getElementById('qlist').innerHTML = view.map((v,n) => {
+    const q = Q[v.i];
+    let body = '';
+    if (q.t==='mc') {
+      body = '<div class="quiz-opts">' + v.opts.map((k,pos) => `<button class="quiz-opt" data-n="${n}" data-k="${k}" onclick="pickMC(${n},${k})"><b>${LET[pos]}.</b> ${esc(q.o[k])}</button>`).join('') + '</div>';
+    } else if (q.t==='tf') {
+      body = `<div class="tfrow"><button class="quiz-opt" data-n="${n}" data-k="true" onclick="pickTF(${n},true)">True</button><button class="quiz-opt" data-n="${n}" data-k="false" onclick="pickTF(${n},false)">False</button></div>`;
+    } else {
+      body = q.p.map((pair,k) => `<div class="mrow"><label for="s${n}_${k}">${esc(pair[0])}</label><select id="s${n}_${k}" onchange="pickMatch(${n},${k},this.value)"><option value="-1">Choose…</option>${v.right.map(r => `<option value="${r}">${esc(q.p[r][1])}</option>`).join('')}</select></div>`).join('');
+    }
+    return `<div class="card qcard" id="q${n}"><div class="qhead"><span class="qn">Q${n+1}</span><span class="chip">${typeName(q.t)}</span></div><p class="quiz-q">${esc(q.q)}</p>${body}<div class="verdict hide" id="v${n}"></div></div>`;
+  }).join('');
+}
+
+function pickMC(n,k){ if(done) return; ans[n]=k; document.querySelectorAll(`#q${n} .quiz-opt`).forEach(b => b.classList.toggle('sel', +b.dataset.k===k)); updateProg(); }
+function pickTF(n,val){ if(done) return; ans[n]=val; document.querySelectorAll(`#q${n} .quiz-opt`).forEach(b => b.classList.toggle('sel', (b.dataset.k==='true')===val)); updateProg(); }
+function pickMatch(n,k,val){ if(done) return; ans[n][k]=+val; updateProg(); }
+
+function isAnswered(n){ const q=Q[view[n].i]; if(q.t==='match') return ans[n].every(x=>x>=0); return ans[n]!==null; }
+function updateProg(){ const c = view.filter((_,n)=>isAnswered(n)).length; document.getElementById('navprog').textContent = c + ' / 100 answered'; document.getElementById('pc').textContent = c + ' of 100 answered'; document.getElementById('pb').style.width = c + '%'; }
+
+function correctText(q){
+  if (q.t==='mc') return esc(q.o[q.a]);
+  if (q.t==='tf') return q.a ? 'True' : 'False';
+  return '<ul>' + q.p.map(p => `<li>${esc(p[0])} → ${esc(p[1])}</li>`).join('') + '</ul>';
+}
+
+function submitQuiz(){
+  const unanswered = view.filter((_,n)=>!isAnswered(n)).length;
+  if (unanswered && !confirm(unanswered + ' question(s) are not fully answered. Submit anyway?')) return;
+  done = true;
+  let score = 0; const per = {}; Object.keys(MODS).forEach(m => per[m]={c:0,t:0});
+  view.forEach((v,n) => {
+    const q = Q[v.i]; let ok = false;
+    if (q.t==='mc') ok = ans[n]===q.a;
+    else if (q.t==='tf') ok = ans[n]===q.a;
+    else ok = ans[n].every((x,k)=>x===k);
+    const answered = isAnswered(n);
+    per[q.m].t++; if (ok) { score++; per[q.m].c++; }
+    const card = document.getElementById('q'+n);
+    card.classList.add(ok ? 'ok' : (answered ? 'bad' : 'skip'));
+    card.querySelectorAll('.quiz-opt').forEach(b => {
+      b.disabled = true; b.classList.remove('sel');
+      const k = q.t==='mc' ? +b.dataset.k : (b.dataset.k==='true');
+      const right = q.t==='mc' ? k===q.a : k===q.a;
+      if (right) b.classList.add('correct'); else if (ans[n]===k) b.classList.add('incorrect');
+    });
+    if (q.t==='match') q.p.forEach((_,k) => { const s=document.getElementById(`s${n}_${k}`); s.disabled=true; s.classList.add(ans[n][k]===k ? 'good' : 'wrong'); });
+    const vd = document.getElementById('v'+n); vd.classList.remove('hide');
+    const label = ok ? '<b class="ok">✅ Correct</b>' : (answered ? '<b class="bad">❌ Not quite</b>' : '<b class="skip">⚪ Skipped</b>');
+    vd.innerHTML = label + (ok && q.t!=='match' ? '' : `<div>Correct answer: ${correctText(q)}</div>`) + (q.x ? `<div style="margin-top:.3rem;color:var(--text-soft)">${esc(q.x)}</div>` : '');
+  });
+  const pct = Math.round(score);
+  const msg = pct>=90 ? 'Outstanding! You really know this material.' : pct>=75 ? 'Great job. Review the red ones and you will be perfect.' : pct>=60 ? 'Solid start. Re-read the modules for the ones you missed.' : 'Keep going. Use the module pages and slides, then retake it.';
+  document.getElementById('results').innerHTML = `<div class="card" id="resCard"><div class="score">${score} / 100</div><p style="text-align:center;margin:.2rem 0 0">${esc(msg)}</p>
+    <div class="bars">${Object.keys(MODS).map(m => `<div class="barrow"><span>M${m} ${esc(MODS[m])}</span><div class="track"><i style="width:${per[m].c/per[m].t*100}%"></i></div><b>${per[m].c}/${per[m].t}</b></div>`).join('')}</div>
+    <div class="actions"><button class="btn" onclick="showOnly('bad')">Show only my mistakes</button><button class="btn ghost" onclick="showOnly('all')">Show all</button><button class="btn ghost" onclick="start()">Retake (reshuffle)</button></div></div>`;
+  buildKey(); document.getElementById('keyWrap').classList.remove('hide');
+  document.getElementById('submitRow').classList.add('hide');
+  document.getElementById('resCard').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function showOnly(mode){ document.querySelectorAll('.qcard').forEach(c => { const wrong = c.classList.contains('bad') || c.classList.contains('skip'); c.classList.toggle('hide', mode==='bad' && !wrong); }); document.getElementById('quiz').scrollIntoView({behavior:'smooth'}); }
+
+function buildKey(){
+  document.getElementById('keyBody').innerHTML = view.map((v,n) => { const q=Q[v.i]; return `<tr><td><b>${n+1}</b></td><td>M${q.m} · ${esc(MODS[q.m])}</td><td>${typeName(q.t)}</td><td>${esc(q.q)}<div style="margin-top:.3rem;color:var(--accent)"><b>Answer:</b> ${correctText(q)}</div></td></tr>`; }).join('');
+}
+function revealKey(){ buildKey(); document.getElementById('keyWrap').classList.remove('hide'); document.getElementById('keyWrap').scrollIntoView({behavior:'smooth'}); }
+start();
+
+</script></body></html>
