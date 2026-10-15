@@ -89,13 +89,16 @@ table.cmp th{color:var(--accent);font-size:.78rem}
 
 
 <style>
+/* Original slides PDF viewer */
 .deck{border:1px solid var(--card-border);border-radius:14px;overflow:hidden;background:var(--card-bg)}
-.deckbar{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;padding:.55rem .8rem;border-bottom:1px solid var(--card-border);background:var(--bg-soft);font-size:.85rem}
+.deckbar{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;padding:.65rem .8rem;border-bottom:1px solid var(--card-border);background:var(--bg-soft);font-size:.85rem}
 .deckbar b{color:var(--accent)}
-.deckbar button{background:var(--accent);color:#fff;border:none;border-radius:999px;padding:.35rem .8rem;font-size:.8rem;cursor:pointer;margin-left:.3rem;font-family:inherit}
-.deckscroll{max-height:75vh;overflow-y:auto;padding:.7rem;background:#0d1210;display:flex;flex-direction:column;gap:.7rem;-webkit-overflow-scrolling:touch}
-.deckscroll img{width:100%;height:auto;aspect-ratio:16/9;display:block;border-radius:8px;background:#fff}
-.deck:fullscreen .deckscroll{max-height:calc(100vh - 52px)}
+.pdf-button{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border-radius:999px;padding:.4rem .85rem;font-size:.82rem;font-weight:600}
+.pdf-button:hover{opacity:.85}
+.pdf-viewer{display:block;width:100%;height:75vh;min-height:450px;border:0;background:var(--bg-soft)}
+.pdf-fallback{padding:.8rem 1rem;margin:0;color:var(--text-soft);font-size:.85rem}
+.pdf-fallback a{color:var(--accent)}
+@media(max-width:600px){.pdf-viewer{height:65vh;min-height:400px}}
 </style></head><body>
 <a class="back" href="../index.html">← Course Hub</a>
 <header class="hero"><h1>🔌 Power Supplies, Made Simple</h1><p>Everything from your Module 7 slides explained in plain language, with pictures and a quiz.</p></header>
@@ -168,74 +171,16 @@ table.cmp th{color:var(--accent);font-size:.78rem}
 
 
 <section id="slides"><h2>📑 The original slides</h2>
-<p class="sub">All 52 slides from the PowerPoint. Scroll inside the box, or use Prev / Next.</p>
-<div class="deck" id="deck"><div class="deckbar"><span id="deckcount">Slide <b>1</b> / 52</span><span><button type="button" onclick="deckGo(-1)">◀ Prev</button><button type="button" onclick="deckGo(1)">Next ▶</button><button type="button" onclick="deckFull()">⛶ Full screen</button></span></div>
-<div class="deckscroll" id="deckscroll">
-<img src="m7-slide-01.jpg" width="1000" height="563" loading="lazy" alt="Slide 1 of 52">
-<img src="m7-slide-02.jpg" width="1000" height="563" loading="lazy" alt="Slide 2 of 52">
-<img src="m7-slide-03.jpg" width="1000" height="563" loading="lazy" alt="Slide 3 of 52">
-<img src="m7-slide-04.jpg" width="1000" height="563" loading="lazy" alt="Slide 4 of 52">
-<img src="m7-slide-05.jpg" width="1000" height="563" loading="lazy" alt="Slide 5 of 52">
-<img src="m7-slide-06.jpg" width="1000" height="563" loading="lazy" alt="Slide 6 of 52">
-<img src="m7-slide-07.jpg" width="1000" height="563" loading="lazy" alt="Slide 7 of 52">
-<img src="m7-slide-08.jpg" width="1000" height="563" loading="lazy" alt="Slide 8 of 52">
-<img src="m7-slide-09.jpg" width="1000" height="563" loading="lazy" alt="Slide 9 of 52">
-<img src="m7-slide-10.jpg" width="1000" height="563" loading="lazy" alt="Slide 10 of 52">
-<img src="m7-slide-11.jpg" width="1000" height="563" loading="lazy" alt="Slide 11 of 52">
-<img src="m7-slide-12.jpg" width="1000" height="563" loading="lazy" alt="Slide 12 of 52">
-<img src="m7-slide-13.jpg" width="1000" height="563" loading="lazy" alt="Slide 13 of 52">
-<img src="m7-slide-14.jpg" width="1000" height="563" loading="lazy" alt="Slide 14 of 52">
-<img src="m7-slide-15.jpg" width="1000" height="563" loading="lazy" alt="Slide 15 of 52">
-<img src="m7-slide-16.jpg" width="1000" height="563" loading="lazy" alt="Slide 16 of 52">
-<img src="m7-slide-17.jpg" width="1000" height="563" loading="lazy" alt="Slide 17 of 52">
-<img src="m7-slide-18.jpg" width="1000" height="563" loading="lazy" alt="Slide 18 of 52">
-<img src="m7-slide-19.jpg" width="1000" height="563" loading="lazy" alt="Slide 19 of 52">
-<img src="m7-slide-20.jpg" width="1000" height="563" loading="lazy" alt="Slide 20 of 52">
-<img src="m7-slide-21.jpg" width="1000" height="563" loading="lazy" alt="Slide 21 of 52">
-<img src="m7-slide-22.jpg" width="1000" height="563" loading="lazy" alt="Slide 22 of 52">
-<img src="m7-slide-23.jpg" width="1000" height="563" loading="lazy" alt="Slide 23 of 52">
-<img src="m7-slide-24.jpg" width="1000" height="563" loading="lazy" alt="Slide 24 of 52">
-<img src="m7-slide-25.jpg" width="1000" height="563" loading="lazy" alt="Slide 25 of 52">
-<img src="m7-slide-26.jpg" width="1000" height="563" loading="lazy" alt="Slide 26 of 52">
-<img src="m7-slide-27.jpg" width="1000" height="563" loading="lazy" alt="Slide 27 of 52">
-<img src="m7-slide-28.jpg" width="1000" height="563" loading="lazy" alt="Slide 28 of 52">
-<img src="m7-slide-29.jpg" width="1000" height="563" loading="lazy" alt="Slide 29 of 52">
-<img src="m7-slide-30.jpg" width="1000" height="563" loading="lazy" alt="Slide 30 of 52">
-<img src="m7-slide-31.jpg" width="1000" height="563" loading="lazy" alt="Slide 31 of 52">
-<img src="m7-slide-32.jpg" width="1000" height="563" loading="lazy" alt="Slide 32 of 52">
-<img src="m7-slide-33.jpg" width="1000" height="563" loading="lazy" alt="Slide 33 of 52">
-<img src="m7-slide-34.jpg" width="1000" height="563" loading="lazy" alt="Slide 34 of 52">
-<img src="m7-slide-35.jpg" width="1000" height="563" loading="lazy" alt="Slide 35 of 52">
-<img src="m7-slide-36.jpg" width="1000" height="563" loading="lazy" alt="Slide 36 of 52">
-<img src="m7-slide-37.jpg" width="1000" height="563" loading="lazy" alt="Slide 37 of 52">
-<img src="m7-slide-38.jpg" width="1000" height="563" loading="lazy" alt="Slide 38 of 52">
-<img src="m7-slide-39.jpg" width="1000" height="563" loading="lazy" alt="Slide 39 of 52">
-<img src="m7-slide-40.jpg" width="1000" height="563" loading="lazy" alt="Slide 40 of 52">
-<img src="m7-slide-41.jpg" width="1000" height="563" loading="lazy" alt="Slide 41 of 52">
-<img src="m7-slide-42.jpg" width="1000" height="563" loading="lazy" alt="Slide 42 of 52">
-<img src="m7-slide-43.jpg" width="1000" height="563" loading="lazy" alt="Slide 43 of 52">
-<img src="m7-slide-44.jpg" width="1000" height="563" loading="lazy" alt="Slide 44 of 52">
-<img src="m7-slide-45.jpg" width="1000" height="563" loading="lazy" alt="Slide 45 of 52">
-<img src="m7-slide-46.jpg" width="1000" height="563" loading="lazy" alt="Slide 46 of 52">
-<img src="m7-slide-47.jpg" width="1000" height="563" loading="lazy" alt="Slide 47 of 52">
-<img src="m7-slide-48.jpg" width="1000" height="563" loading="lazy" alt="Slide 48 of 52">
-<img src="m7-slide-49.jpg" width="1000" height="563" loading="lazy" alt="Slide 49 of 52">
-<img src="m7-slide-50.jpg" width="1000" height="563" loading="lazy" alt="Slide 50 of 52">
-<img src="m7-slide-51.jpg" width="1000" height="563" loading="lazy" alt="Slide 51 of 52">
-<img src="m7-slide-52.jpg" width="1000" height="563" loading="lazy" alt="Slide 52 of 52">
-</div></div></section>
-<script>
-(function(){
-  var box=document.getElementById('deckscroll'), imgs=box.getElementsByTagName('img'), cur=0, total=52;
-  function setCur(i){ cur=i; document.getElementById('deckcount').innerHTML='Slide <b>'+(i+1)+'</b> / '+total; }
-  var tick=false;
-  function update(){ var top=box.scrollTop+box.offsetTop, i=0; for(;i<imgs.length-1;i++){ if(imgs[i].offsetTop+imgs[i].offsetHeight/2>top) break; } setCur(i); }
-  box.addEventListener('scroll',function(){ if(!tick){ tick=true; requestAnimationFrame(function(){ tick=false; update(); }); } });
-  update();
-  window.deckGo=function(d){ var t=Math.max(0,Math.min(total-1,cur+d)); box.scrollTo({top:imgs[t].offsetTop-box.offsetTop-8,behavior:'smooth'}); };
-  window.deckFull=function(){ var d=document.getElementById('deck'); if(document.fullscreenElement){document.exitFullscreen();} else if(d.requestFullscreen){d.requestFullscreen();} };
-})();
-</script>
+<p class="sub">View the original Module 7 slides as a PDF. Zoom, navigate pages, or open the PDF in a new tab.</p>
+<div class="deck" id="deck">
+  <div class="deckbar">
+    <b>📄 Module 7 — Original Slides</b>
+    <a href="m7-slides.pdf" target="_blank" rel="noopener" class="pdf-button">Open PDF ↗</a>
+  </div>
+  <iframe class="pdf-viewer" src="m7-slides.pdf" title="Module 7 original slides PDF" loading="lazy"></iframe>
+  <p class="pdf-fallback">If the PDF doesn't appear in your browser, <a href="m7-slides.pdf" target="_blank" rel="noopener">open it here</a>.</p>
+</div>
+</section>
 <p class="footer-note">Made from your Module 7: Power Supplies slides · AWS Academy Data Center Technician</p></main>
 <script>
 const QUIZ = [{"q": "What does a PSU do?", "o": ["Converts low-voltage DC into high-voltage AC", "Converts high-voltage AC from the wall into low-voltage DC", "Stores data", "Cools the CPU"], "a": 1, "x": "Computer circuits need DC, so the PSU steps down and converts AC to DC."}, {"q": "Another name for a PSU is...", "o": ["Switched-mode power supply (SMPS)", "System memory power source", "Serial motherboard power system", "Step-up transformer"], "a": 0, "x": "PSUs are sometimes called SMPS."}, {"q": "Home and office AC voltage is typically...", "o": ["5-12 V", "100-250 V", "1000-2000 V", "3.3 V"], "a": 1, "x": "It varies by geography, and the regulator must be set to match."}, {"q": "What voltage range do DC-dependent devices need?", "o": ["5-12 V", "100-250 V", "500 V", "0 V"], "a": 0, "x": "Step-down transformers convert high voltage to this range."}, {"q": "Who designed the first dedicated built-in PSU for a PC (the Apple II)?", "o": ["Steve Jobs", "Rod Holt", "Bill Gates", "Alan Turing"], "a": 1, "x": "Rod Holt, an Atari engineer."}, {"q": "Which voltage powers cooling fans, HDDs, and high-powered GPUs?", "o": ["+3.3 V", "+5 V", "+12 V", "-5 V"], "a": 2, "x": "+12 V is for motorized/electromechanical parts. +3.3 V and +5 V power CPUs, RAM, and motherboard circuitry."}, {"q": "Which voltage(s) power the CPU, RAM and motherboard circuitry?", "o": ["+12 V only", "+3.3 V and +5 V", "-12 V", "100 V"], "a": 1, "x": "Almost all other hardware components run on +3.3 V and +5 V."}, {"q": "A PC PSU's power rating can range from...", "o": ["5 W to 10 W", "250 W to 1000 W", "5 kW to 10 kW", "1 W to 5 W"], "a": 1, "x": "All output is drawn from a single transformer."}, {"q": "A PSU's rating should be how much greater than the calculated system load?", "o": ["10 percent", "20 percent", "40 percent", "100 percent"], "a": 2, "x": "This keeps the system performing optimally."}, {"q": "Where is the PSU physically located?", "o": ["Near the rear of the PC chassis", "On the front panel", "Under the keyboard", "Inside the CPU"], "a": 0, "x": "Look for the cooling fan next to the power cord connection."}, {"q": "True or False: The motherboard uses the PSU's 4+4-pin connector as its main power source.", "o": ["True", "False"], "a": 1, "x": "False. The 20+4-pin connector powers the motherboard; the 4+4-pin powers graphics processing."}, {"q": "What is step 1 of removing a PSU?", "o": ["Unscrew the PSU", "Turn off the power and disconnect the power cord", "Remove the panel", "Disconnect the PSU connectors"], "a": 1, "x": "Order: power off, remove panel, disconnect PSU, unscrew, remove."}, {"q": "Put the removal steps in order: (a) unplug internal connectors, (b) power off and unplug, (c) remove screws, (d) open tower panel", "o": ["b, d, a, c", "a, b, c, d", "d, b, a, c", "c, a, d, b"], "a": 0, "x": "Power off, open panel, unplug connectors, remove screws."}, {"q": "When installing a PSU, what comes immediately after inserting it into the slot?", "o": ["Replace the panel", "Secure it with screws at the back of the tower", "Test the PSU", "Connect the power cord"], "a": 1, "x": "Insert, secure, connect outputs, replace panel, connect the power cord, reconnect devices, test."}, {"q": "What is the very last step when installing a PSU?", "o": ["Replace the panel", "Connect the power cord", "Test it by turning on power and pressing the power button", "Fasten the screws"], "a": 2, "x": "Testing confirms the PC turns on."}, {"q": "Which is a common symptom of a PSU problem?", "o": ["Unrequested restarts", "A brighter monitor", "Faster boot times", "A quieter fan"], "a": 0, "x": "Others: no power, unresponsive system, failure to detect devices, overheating, electrical charge on the case."}, {"q": "Which THREE are recommended PSU troubleshooting strategies?", "o": ["Check AC input, check DC connections, reseat and clean connections", "Turn the PC on and off, swap AC and DC connectors, remove memory", "Remove the CPU, format the disk, reinstall the OS", "Replace the monitor"], "a": 0, "x": "The slides' correct answers: check AC, check DC, and reseat/clean connections."}, {"q": "What can you use to clean connectors?", "o": ["Water", "A non-corrosive cleaner such as isopropyl rubbing alcohol", "Bleach", "Sandpaper"], "a": 1, "x": "Non-corrosive only."}, {"q": "What does the orange pin on a PSU connector represent?", "o": ["Ground", "+12 V", "Power good (+3 to +6 V)", "-5 V"], "a": 2, "x": "It's the power-good signal, which should momentarily spike to +3 V or +6 V."}, {"q": "Which pin color is +12 V?", "o": ["Red", "Yellow", "Blue", "White"], "a": 1, "x": "Red +5, white -5, yellow +12, blue -12, black ground, orange power good."}, {"q": "How much voltage variation is acceptable at a PSU pin?", "o": ["None", "Up to 5 percent", "Up to 50 percent", "Up to 100 percent"], "a": 1, "x": "Variations of up to 5 percent are fine."}, {"q": "Where do you attach the multimeter's black probe when testing?", "o": ["The orange wire", "The PSU ground (black wire)", "The yellow wire", "The case"], "a": 1, "x": "Black probe to ground, red probe to the pin under test."}, {"q": "What type of fan do modern ATX PSUs use?", "o": ["Brushless DC (BLDC)", "AC induction", "Steam-powered", "None"], "a": 0, "x": "BLDC fans reduce mechanical failures, but not electrical ones."}];
