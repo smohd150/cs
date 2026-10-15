@@ -172,11 +172,31 @@ table.cmp th{color:var(--accent);font-size:.78rem}
 
 <section id="slides"><h2>📑 The original slides</h2>
 <p class="sub">View the original Module 7 slides as a PDF. Zoom, navigate pages, or open the PDF in a new tab.</p>
-<div class="deck" id="deck">
+<div class="deck pdf-deck">
   <div class="deckbar">
     <b>📄 Module 7 — Original Slides</b>
-    <a href="m7-slides.pdf" target="_blank" rel="noopener" class="pdf-button">Open PDF ↗</a>
+    <a
+      href="/cs/module7/m7-slides.pdf"
+      target="_blank"
+      rel="noopener"
+      class="pdf-button"
+    >Open PDF ↗</a>
   </div>
+
+  <iframe
+    class="pdf-viewer"
+    src="/cs/module7/m7-slides.pdf#view=FitH"
+    title="Module 7 original slides"
+    loading="eager"
+  ></iframe>
+
+  <p class="pdf-fallback">
+    If the slides do not appear,
+    <a href="/cs/module7/m7-slides.pdf" target="_blank" rel="noopener">
+      open the PDF directly
+    </a>.
+  </p>
+</div>
   <iframe class="pdf-viewer" src="m7-slides.pdf" title="Module 7 original slides PDF" loading="lazy"></iframe>
   <p class="pdf-fallback">If the PDF doesn't appear in your browser, <a href="m7-slides.pdf" target="_blank" rel="noopener">open it here</a>.</p>
 </div>
