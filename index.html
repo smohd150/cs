@@ -2,152 +2,36 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="style.css"> 
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CS Topics</title>
+<meta name="theme-color" content="#090e1c">
+<title>Course Hub | AWS Academy Data Center Technician</title>
 <style>
-:root{
-  --bg:#0c1210; --bg-soft:#121a17; --card:#141e1a; --border:#223029;
-  --text:#eaf2ee; --text-soft:#8fa89d; --accent:#36d9a0; --accent-dim:#1d6e52;
-  --locked:#0f1613; --locked-border:#1b2521;
-  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-}
-:root[data-theme="light"]{--bg:#f4f8f6;--bg-soft:#eaf1ee;--card:#fff;--border:#dde7e2;--text:#122019;--text-soft:#5c7268;--accent:#0f8a63;--accent-dim:#cdeee1;--locked:#eef3f1;--locked-border:#dde7e2}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;min-height:100%}
-header{padding:3.2rem 1.2rem 2rem;text-align:center;position:relative;overflow:hidden}
-header::before{content:"";position:absolute;inset:0;background:
-  radial-gradient(circle at 20% 20%, var(--accent-dim) 0%, transparent 40%),
-  radial-gradient(circle at 80% 0%, var(--accent-dim) 0%, transparent 35%);
-  opacity:.35; pointer-events:none;}
-.eyebrow{color:var(--accent);font-size:.78rem;letter-spacing:.02em;position:relative}
-h1{margin:.5rem 0 .6rem;font-size:clamp(1.6rem,5vw,2.3rem);position:relative;font-weight:700}
-header p{color:var(--text-soft);max-width:480px;margin:0 auto;font-size:.95rem;position:relative}
-main{max-width:980px;margin:0 auto;padding:1rem 1.2rem 3.5rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:1.5rem}
-a.box, div.box{
-  display:flex; flex-direction:column; gap:.6rem; text-decoration:none; color:inherit;
-  background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.3rem 1.2rem 1.4rem;
-  position:relative; min-height:150px; transition:transform .15s ease, border-color .15s ease;
-}
-a.box:hover{transform:translateY(-3px); border-color:var(--accent)}
-a.box:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
-.num{font-size:.78rem; color:var(--text-soft); font-variant-numeric:tabular-nums}
-.box h2{margin:0; font-size:1.08rem; line-height:1.3}
-.box p{margin:0; font-size:.84rem; color:var(--text-soft); flex-grow:1}
-.go{font-size:.82rem; color:var(--accent); font-weight:600}
-.box.locked{background:var(--locked); border-color:var(--locked-border); cursor:default}
-.box.locked .num, .box.locked p{color:var(--text-soft); opacity:.65}
-.box.locked h2{opacity:.7}
-.soon{font-size:.72rem; color:var(--text-soft); background:var(--bg-soft); display:inline-block; padding:.2rem .6rem; border-radius:999px; align-self:flex-start}
-.icon{font-size:1.5rem; line-height:1}
-footer{text-align:center; color:var(--text-soft); font-size:.78rem; padding-bottom:2rem}
+:root{color-scheme:dark;--bg:#090e1c;--surface:#121b30;--stroke:#293550;--text:#f4f7ff;--muted:#a8b5d0;--accent:#79e5cb;--violet:#a99bff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(ellipse at 15% 0%,#22315b 0%,transparent 43%),radial-gradient(ellipse at 90% 18%,#272049 0%,transparent 35%),var(--bg);padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+a{color:inherit}.wrap{width:min(1080px,calc(100% - 40px));margin:auto}.top{display:flex;align-items:center;justify-content:space-between;padding:30px 0;gap:16px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em}.brand-icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--violet));color:#10152b;font-size:23px}.tag{border:1px solid #425173;border-radius:999px;padding:8px 13px;color:#c3cdea;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.hero{padding:70px 0 44px}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:12px}.hero h1{font-size:clamp(40px,6.5vw,70px);line-height:1.07;letter-spacing:-.055em;max-width:850px;margin:16px 0 20px}.hero h1 span{background:linear-gradient(100deg,var(--accent),#c1b4ff);background-clip:text;-webkit-background-clip:text;color:transparent}.hero p{font-size:17px;color:var(--muted);line-height:1.75;max-width:690px;margin:0}.stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.stat{border:1px solid #354460;border-radius:999px;padding:9px 14px;background:#141e33b8;color:#c3cdea;font-size:13px}.stat strong{color:var(--accent)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:22px 0 18px}.section-head h2{font-size:24px;letter-spacing:-.035em;margin:0}.section-head p{font-size:14px;color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.box{display:flex;flex-direction:column;gap:13px;text-decoration:none;background:linear-gradient(155deg,rgba(25,37,61,.96),rgba(17,26,46,.98));border:1px solid var(--stroke);border-radius:20px;padding:23px;min-height:245px;transition:transform .2s,border-color .2s,box-shadow .2s}.box:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 18px 45px #0004}.box:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.box-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.icon{display:grid;place-items:center;width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#243e4e,#35305b);font-size:25px}.num{color:var(--violet);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}.box h3{margin:0;font-size:19px;line-height:1.3;letter-spacing:-.025em}.box p{margin:0;color:var(--muted);font-size:13px;line-height:1.7;flex:1}.go{font-size:13px;color:var(--accent);font-weight:800;margin-top:5px}.practice{margin-top:38px}.practice .box{min-height:230px}.practice .box:first-child{border-color:#3b5371;background:linear-gradient(115deg,rgba(37,65,87,.85),rgba(29,32,65,.85))}.footer{margin-top:62px;padding:28px 0 38px;border-top:1px solid var(--stroke);text-align:center;color:var(--muted);font-size:12px;line-height:1.7}@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.wrap{width:min(100% - 32px,1080px)}.top{padding:22px 0}.tag{font-size:10px;padding:7px 10px}.brand{font-size:14px}.hero{padding:45px 0 30px}.hero p{font-size:15px}.grid{grid-template-columns:1fr}.box{min-height:205px}.section-head{align-items:start;flex-direction:column;gap:6px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="eyebrow">AWS Academy · Data Center Technician</div>
-  <h1>Course Hub</h1>
-  <p>Eight modules, each with a simple study page, pictures, a quiz and the original slides. Then test yourself with the 100 question quiz and the past exams.</p>
-</header>
-
+<div class="wrap">
+<nav class="top" aria-label="Course branding"><div class="brand"><span class="brand-icon" aria-hidden="true">⚡</span><span>Course Hub</span></div><span class="tag">AWS Academy</span></nav>
+<header class="hero"><div class="eyebrow">Data Center Technician · Study Portal</div><h1>Master the <span>hardware essentials.</span></h1><p>Explore eight hardware modules with study notes, pictures, quizzes and original slides. Then put your knowledge to the test with the 100-question quiz and past exams.</p><div class="stats"><span class="stat"><strong>08</strong> learning modules</span><span class="stat"><strong>100</strong> question final quiz</span><span class="stat"><strong>102</strong> past-exam questions</span></div></header>
 <main>
-  <div class="grid">
-
-    <a class="box" href="module1/index.html">
-      <span class="icon">⚙️</span>
-      <span class="num">Module 1</span>
-      <h2>Hardware Fundamentals</h2>
-      <p>Bits, hardware vs. software, computer types, and how it all works together.</p>
-      <span class="go">Open module →</span>
-    </a>
-
-    <a class="box" href="module2/index.html">
-      <span class="icon">🧰</span>
-      <span class="num">Module 2</span>
-      <h2>Hardware Used to Work on Computers</h2>
-      <p>Safety practices and the technician's full toolkit.</p>
-      <span class="go">Open module →</span>
-    </a>
-
-    <a class="box" href="module3/index.html">
-      <span class="icon">🖥️</span>
-      <span class="num">Module 3</span>
-      <h2>Motherboards</h2>
-      <p>Every component, sizes, and how to remove and install one.</p>
-      <span class="go">Open module →</span>
-    </a>
-
-    <a class="box" href="module4/index.html">
-      <span class="icon">🧠</span>
-      <span class="num">Module 4</span>
-      <h2>Processors</h2>
-      <p>What's inside a CPU, socket types, and installing/removing one.</p>
-      <span class="go">Open module →</span>
-    </a>
-
-    <a class="box" href="module5/index.html">
-      <span class="icon">💾</span>
-      <span class="num">Module 5</span>
-      <h2>Memory</h2>
-      <p>Primary vs. secondary storage, RAM, cache, and troubleshooting.</p>
-      <span class="go">Open module →</span>
-    </a>
-
-    <a class="box" href="module6/index.html">
-      <span class="icon">💽</span>
-      <span class="num">Module 6</span>
-      <h2>Storage Drives</h2>
-      <p>HDD, SSD, USB, tape — use cases, install/remove, troubleshooting, plus a video.</p>
-      <span class="go">Open module →</span>
-    </a>
-
-    <a class="box" href="module7/index.html">
-      <span class="icon">🔌</span>
-      <span class="num">Module 7</span>
-      <h2>Power Supplies</h2>
-      <p>What a PSU does, voltages, install/remove, and troubleshooting with a multimeter.</p>
-      <span class="go">Open module →</span>
-    </a>
-
-    <a class="box" href="module8/index.html">
-      <span class="icon">🎮</span>
-      <span class="num">Module 8</span>
-      <h2>Graphics Cards</h2>
-      <p>GPU parts, how images are made, install/remove, and fixing common problems.</p>
-      <span class="go">Open module →</span>
-    </a>
-
-    <a class="box" href="quiz100/index.html">
-      <span class="icon">💯</span>
-      <span class="num">Final quiz</span>
-      <h2>100 Question Quiz</h2>
-      <p>Shuffled questions from all 8 modules: multiple choice, true/false and matching, with an answer key.</p>
-      <span class="go">Start the quiz →</span>
-    </a>
-
-    <a class="box" href="pastexams/index.html">
-      <span class="icon">📝</span>
-      <span class="num">Exam practice</span>
-      <h2>Past Exams</h2>
-      <p>102 questions from your IT6001 revision sheet and past quizzes, with scores by topic and an answer key.</p>
-      <span class="go">Start practice →</span>
-    </a>
-
-    <a class="box" href="practicequiz/index.html">
-      <span class="icon">🔗</span>
-      <span class="num">Practices</span>
-      <h2>Quizzes Links</h2>
-      <p>Multiple quizes to practice from module 1 to 8.</p>
-      <span class="go">Start practice →</span>
-    </a>
-
-  </div>
-</main>
-
-<footer>AWS Academy Data Center Technician · 8 modules + 100 question quiz + past exams</footer>
-
+<section aria-labelledby="modules-heading"><div class="section-head"><h2 id="modules-heading">Explore the modules</h2><p>Build your skills, one topic at a time.</p></div><div class="grid">
+<a class="box" href="module1/index.html"><div class="box-top"><span class="icon" aria-hidden="true">⚙️</span><span class="num">Module 01</span></div><h3>Hardware Fundamentals</h3><p>Bits, hardware vs. software, computer types, and how it all works together.</p><span class="go">Open module →</span></a>
+<a class="box" href="module2/index.html"><div class="box-top"><span class="icon" aria-hidden="true">🧰</span><span class="num">Module 02</span></div><h3>Hardware Used to Work on Computers</h3><p>Safety practices and the technician's full toolkit.</p><span class="go">Open module →</span></a>
+<a class="box" href="module3/index.html"><div class="box-top"><span class="icon" aria-hidden="true">🖥️</span><span class="num">Module 03</span></div><h3>Motherboards</h3><p>Every component, sizes, and how to remove and install one.</p><span class="go">Open module →</span></a>
+<a class="box" href="module4/index.html"><div class="box-top"><span class="icon" aria-hidden="true">🧠</span><span class="num">Module 04</span></div><h3>Processors</h3><p>What's inside a CPU, socket types, and installing/removing one.</p><span class="go">Open module →</span></a>
+<a class="box" href="module5/index.html"><div class="box-top"><span class="icon" aria-hidden="true">💾</span><span class="num">Module 05</span></div><h3>Memory</h3><p>Primary vs. secondary storage, RAM, cache, and troubleshooting.</p><span class="go">Open module →</span></a>
+<a class="box" href="module6/index.html"><div class="box-top"><span class="icon" aria-hidden="true">💽</span><span class="num">Module 06</span></div><h3>Storage Drives</h3><p>HDD, SSD, USB, tape — use cases, install/remove, troubleshooting, plus a video.</p><span class="go">Open module →</span></a>
+<a class="box" href="module7/index.html"><div class="box-top"><span class="icon" aria-hidden="true">🔌</span><span class="num">Module 07</span></div><h3>Power Supplies</h3><p>What a PSU does, voltages, install/remove, and troubleshooting with a multimeter.</p><span class="go">Open module →</span></a>
+<a class="box" href="module8/index.html"><div class="box-top"><span class="icon" aria-hidden="true">🎮</span><span class="num">Module 08</span></div><h3>Graphics Cards</h3><p>GPU parts, how images are made, install/remove, and fixing common problems.</p><span class="go">Open module →</span></a>
+</div></section>
+<section class="practice" aria-labelledby="practice-heading"><div class="section-head"><h2 id="practice-heading">Test your knowledge</h2><p>Get ready for exam day.</p></div><div class="grid">
+<a class="box" href="quiz100/index.html"><div class="box-top"><span class="icon" aria-hidden="true">💯</span><span class="num">Final quiz</span></div><h3>100 Question Quiz</h3><p>Shuffled questions from all 8 modules: multiple choice, true/false and matching, with an answer key.</p><span class="go">Start the quiz →</span></a>
+<a class="box" href="pastexams/index.html"><div class="box-top"><span class="icon" aria-hidden="true">📝</span><span class="num">Exam practice</span></div><h3>Past Exams</h3><p>102 questions from your IT6001 revision sheet and past quizzes, with scores by topic and an answer key.</p><span class="go">Start practice →</span></a>
+<a class="box" href="practicequiz/index.html"><div class="box-top"><span class="icon" aria-hidden="true">🔗</span><span class="num">Practice links</span></div><h3>Quizzes Links</h3><p>Multiple quizzes to practice from module 1 to 8.</p><span class="go">Start practice →</span></a>
+</div></section>
+</main><footer class="footer">AWS Academy · Data Center Technician<br>8 modules · 100-question quiz · Past exams</footer>
+</div>
 </body>
 </html>
